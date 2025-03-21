@@ -186,7 +186,17 @@
 *::after {
   box-sizing: border-box;
 }
-
+.col-sm button {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.col-sm img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -1012,6 +1022,8 @@ progress {
 
 @media (min-width: 576px) {
   .col-sm {
+    position: relative;
+    padding: 0;
     flex: 1 0 0%;
   }
   .row-cols-sm-auto > * {
@@ -3400,12 +3412,12 @@ textarea.form-control-lg {
 
 .dropup,
 .dropend,
-.dropdown,
+.dropdown
 .dropstart,
 .dropup-center,
 .dropdown-center {
   position: relative;
-}
+}h
 
 .dropdown-toggle {
   white-space: nowrap;
@@ -7519,7 +7531,8 @@ textarea.form-control-lg {
 }
 
 .border-end {
-  border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  border-style: solid;
+  border-color: transparent black transparent transparent !important;
 }
 
 .border-end-0 {
@@ -7583,8 +7596,8 @@ textarea.form-control-lg {
 }
 
 .border-black {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-black-rgb), var(--bs-border-opacity)) !important;
+  border-style: solid !important;
+  border-color: black !important;
 }
 
 .border-white {
@@ -7625,23 +7638,24 @@ textarea.form-control-lg {
 }
 
 .border-1 {
-  border-width: 1px !important;
+  border: 1px solid black !important;
 }
 
 .border-2 {
-  border-width: 2px !important;
+  border: 2px solid black !important;
 }
 
 .border-3 {
-  border-width: 3px !important;
+  border: 3px solid black !important;
+  
 }
 
 .border-4 {
-  border-width: 4px !important;
+  border: 4px solid black !important;
 }
 
 .border-5 {
-  border-width: 5px !important;
+  border: 5px solid black !important;
 }
 
 .border-opacity-10 {
