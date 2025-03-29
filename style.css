@@ -212,8 +212,8 @@
   position: fixed;
   text-align: center;
   width: 100%;
-  background-color: #666666;
-  color: #ffffff;
+  background-color: #532c86;
+  color: #fdfdfd;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -3566,11 +3566,11 @@ fieldset:disabled .btn {
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #0d6efd;
-  --bs-btn-border-color: #0d6efd;
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #4d3486;
+  --bs-btn-border-color: #4d3486;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-hover-bg: #09992d;
   --bs-btn-hover-border-color: #0a58ca;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
