@@ -25,5 +25,3 @@ fetch('https://fakestoreapi.com/products')
 
 //fetch('https://fakestoreapi.com/products')
 //   .then(data => console.log(data));
-
-
