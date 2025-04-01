@@ -11,7 +11,7 @@ fetch('https://fakestoreapi.com/products')
         const priceElements = document.querySelectorAll(`.product-price`);
         priceElements.forEach((priceElement, index) => {
             if (data[index]) {
-                priceElement.textContent = `${data[index].price}KR`;
+                priceElement.textContent = `$${data[index].price}`;
             }
         });
 
