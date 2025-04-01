@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Beställning</title>
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
         <h1>Fyll i din beställning!</h1>
@@ -35,9 +40,15 @@
             </label>
             <input type="text" id="postort" name="postort" required>
 
+            <label for="produkt">
+                Produkt:
+            </label> 
+            <input type="hidden" id="produkt" name="produkt">
+
             <button type="submit">
                 Skicka beställning
             </button>
         </form>
+        <script src="formularScript.js"></script>
     </body>
 </html>

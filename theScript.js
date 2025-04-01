@@ -22,6 +22,14 @@ fetch('https://fakestoreapi.com/products')
             }
         });
     });
+document.querySelectorAll('.purchase-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const productCard = button.closest('.card');
+
+        const productName = productCard.querySelector('.product-title').textContent.trim();
+        window.location.href = `formular.html?product=${encodeURIComponent(productName)}`;
+    });
+});   
 
 //fetch('https://fakestoreapi.com/products')
 //   .then(data => console.log(data));
