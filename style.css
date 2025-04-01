@@ -13987,7 +13987,7 @@ h .dropdown-toggle {
   min-height: 600px; /* Gör formuläret längre */
   overflow: visible; /* Se till att inget innehåll döljs */
 }
-.card {
+.card-form {
   max-width: 500px; /* Gör kortet bredare */
   padding: 30px; /* Lägg till inre marginal */
   margin: 20px auto; /* Centrerar kortet */
