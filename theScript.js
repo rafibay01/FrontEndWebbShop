@@ -1,17 +1,17 @@
 fetch('https://fakestoreapi.com/products')
     .then(response => response.json())
     .then(data => {
-        const titleElements = document.querySelectorAll(`.product-title`);
+        const titleElements = document.querySelectorAll('.product-title');
         titleElements.forEach((titleElement, index) => {
             if (data[index]) {
                 titleElement.textContent = data[index].title;
             }
         });
 
-        const priceElements = document.querySelectorAll(`.product-price`);
+        const priceElements = document.querySelectorAll('.product-price');
         priceElements.forEach((priceElement, index) => {
             if (data[index]) {
-                priceElement.textContent = `$${data[index].price}`;
+                priceElement.textContent = `${data[index].price}KR`;
             }
         });
 
@@ -21,15 +21,14 @@ fetch('https://fakestoreapi.com/products')
                 imgElement.src = product.image;
             }
         });
-    });
-document.querySelectorAll('.purchase-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const productCard = button.closest('.card');
 
-        const productName = productCard.querySelector('.product-title').textContent.trim();
-        window.location.href = `formular.html?product=${encodeURIComponent(productName)}`;
-    });
-});   
-
-//fetch('https://fakestoreapi.com/products')
-//   .then(data => console.log(data));
+        
+        document.querySelectorAll('.purchase-btn').forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                const productName = data[index]?.title || 'Okänd produkt';
+                const urlEncodedProduct = encodeURIComponent(productName);
+                window.location.href = `formular.html?product=${urlEncodedProduct}`;
+            });
+        });
+    })
+    .catch(error => console.error('Fel vid hämtning av produkter:', error));
