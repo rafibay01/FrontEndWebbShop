@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
         produktDisplay.textContent = `Du beställer: ${produkt}`;
     }else {
         console.error('Produktnamn hittades inte i URL eller elementet för produktnamn hittades inte!');
+        alert("Ingen product hittades, Vänligen välj en produkt.");
+        return;
     }
 
     // Formulärvalidering
