@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('customerPhone').textContent = orderData.customer.phone;
         
         // Visa leveransadress
-        const address = `${orderData.customer.address.street}, ${orderData.customer.address.zip} ${orderData.customer.address.city}`;
+        const address = `Adress: ${orderData.customer.address.street}, Postnummer: ${orderData.customer.address.zip}, Postort: ${orderData.customer.address.city}`;
         document.getElementById('deliveryAddress').textContent = address;
         
         // Visa produktinformation
