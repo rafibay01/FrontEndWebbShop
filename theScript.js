@@ -1,28 +1,37 @@
 fetch('https://fakestoreapi.com/products')
     .then(response => response.json())
     .then(data => {
-        const titleElements = document.querySelectorAll('.product-title');
-        titleElements.forEach((titleElement, index) => {
-            if (data[index]) {
-                titleElement.textContent = data[index].title;
-            }
-        });
+        const container = document.querySelector('.container');
+        if (!container) {
+            console.error('Container-elementet hittades inte!');
+            return;
+        }
+        container.innerHTML = '';
 
-        const priceElements = document.querySelectorAll('.product-price');
-        priceElements.forEach((priceElement, index) => {
-            if (data[index]) {
-                priceElement.textContent = `${data[index].price}KR`;
-            }
-        });
-
+        let row;
         data.forEach((product, index) => {
-            const imgElement = document.getElementById(`product${index + 1}`);
-            if (imgElement) {
-                imgElement.src = product.image;
+            if (index % 5 === 0) {
+                row = document.createElement('div');
+                row.className = 'row justify-content-center';
+                container.appendChild(row);
             }
+
+            const col = document.createElement('div');
+            col.className = 'col-6 col-sm-4 col-md3 col-lg-2 g-5';
+
+            col.innerHTML = `
+            <div class="card">
+             <h4 class="product-title text-center fs-5">${product.title}</h4>
+            <img src="${product.image}" alt="${product.title}" class="img-fluid">
+            <p class="text-center product-price">$${product.price}</p>
+            <button class="btn btn-primary purchase-btn" data-id="product${index + 1}">PURCHASE</button>
+            </div>
+            `;
+
+            row.appendChild(col);
         });
 
-        
+
         document.querySelectorAll('.purchase-btn').forEach((btn, index) => {
             btn.addEventListener('click', () => {
                 const productName = data[index]?.title || 'Okänd produkt';

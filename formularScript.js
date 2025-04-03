@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (name.length < 2 || name.length > 50) errors.push("Namn måste vara 2–50 tecken.");
         if (!email.includes('@') || email.length > 50) errors.push("Ogiltig e-post.");
-        if (!/^[0-9\-\(\) ]+$/.test(phone) || phone.length > 50) errors.push("Ogiltigt telefonnummer.");
+        if (!/^[0-9\-\(\) ]+$/.test(phone) || phone.length > 50) errors.push("Ogiltigt telefonnummer, Max 50 tecken.");
         if (address.length < 2 || address.length > 50) errors.push("Ogiltig adress.");
         if (!/^\d{5}$/.test(postal)) errors.push("Postnummer måste vara exakt 5 siffror.");
         if (city.length < 2 || city.length > 50) errors.push("Ogiltig ort.");
