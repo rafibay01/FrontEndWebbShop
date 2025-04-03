@@ -34,9 +34,13 @@ fetch('https://fakestoreapi.com/products')
 
         document.querySelectorAll('.purchase-btn').forEach((btn, index) => {
             btn.addEventListener('click', () => {
-                const productName = data[index]?.title || 'Okänd produkt';
-                const urlEncodedProduct = encodeURIComponent(productName);
-                window.location.href = `formular.html?product=${urlEncodedProduct}`;
+                const product = data[index];
+                const urlParams = new URLSearchParams({
+                    product: product.title,
+                    price: product.price,
+                    image: product.image
+                }).toString();
+                window.location.href = `formular.html?${urlParams}`;
             });
         });
     })
