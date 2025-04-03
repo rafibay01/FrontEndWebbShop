@@ -2,7 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Hämta produktens namn från URL:en
     const urlParams = new URLSearchParams(window.location.search);
     const produkt = urlParams.get('product');
+    const price = urlParams.get('price');
+    const image = urlParams.get('image');
     console.log('Produkt från URL:', produkt);
+    console.log('Pris från URL:', price);
+    console.log('Bild från URL:', image);
 
     // Visa produktnamn om det finns
     const produktDisplay = document.getElementById('productInfo');
@@ -54,12 +58,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         city: city
                     }
                 },
-                
+                product: {
+                    title: produkt || 'Okänd produkt',
+                    price: price || 'Okänt pris',
+                    image: image || 'okänd bild'
+                }
+               
             };
-
-            // Spara orderdata i localStorage
             localStorage.setItem('currentOrder', JSON.stringify(orderData));
-            
+           
             window.location.href = "kvitto.html";
         }
     });

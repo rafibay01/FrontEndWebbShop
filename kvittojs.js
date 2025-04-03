@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Hämta orderdata från localStorage
     const orderData = JSON.parse(localStorage.getItem('currentOrder'));
+
     
     if (orderData) {
         // Visa orderinformation
@@ -29,9 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 });
-
 function displayProductDetails(orderData) {
-    const productDetails = document.getElementById('productDetails');
+    const productDetails = document.getElementById('productInfo');
     
     productDetails.innerHTML = `
         <p><strong>Produkt:</strong> ${orderData.product.title || 'Produktinformation saknas'}</p>
