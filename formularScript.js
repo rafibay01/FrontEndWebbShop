@@ -39,11 +39,26 @@ document.addEventListener('DOMContentLoaded', function () {
         if (errors.length > 0) {
             alert("Formulärfel:\n" + errors.join("\n"));
         } else {
-            alert(`Tack för din beställning av: ${produkt}!`);
-            form.reset();
-            // Om du använder ett orderForm-div, döljs det här:
-            const orderForm = document.getElementById('orderForm');
-            if (orderForm) orderForm.style.display = 'none';
+            const orderData = {
+                orderNumber: Math.floor(Math.random() * 1000000), // Slumpmässigt ordernummer
+                orderDate: new Date().toISOString(),
+                customer: {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    address:  {
+                        street: address,
+                        zip: postal,
+                        city: city
+                    }
+                },
+                
+            };
+
+            // Spara orderdata i localStorage
+            localStorage.setItem('currentOrder', JSON.stringify(orderData));
+            
+            window.location.href = "kvitto.html";
         }
     });
 });
