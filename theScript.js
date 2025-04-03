@@ -34,7 +34,7 @@ fetch('https://fakestoreapi.com/products')
 
         document.querySelectorAll('.purchase-btn').forEach((btn, index) => {
             btn.addEventListener('click', () => {
-                const product = data[index];
+                const product = data[index-1];
                 const urlParams = new URLSearchParams({
                     product: product.title,
                     price: product.price,
