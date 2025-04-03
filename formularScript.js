@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const produktDisplay = document.getElementById('productInfo');
     if (produktDisplay && produkt) {
         produktDisplay.textContent = `Du beställer: ${produkt}`;
+    }else {
+        console.error('Produktnamn hittades inte i URL eller elementet för produktnamn hittades inte!');
     }
 
     // Formulärvalidering
