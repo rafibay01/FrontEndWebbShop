@@ -1,58 +1,85 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orderbekräftelse - COPIA</title>
-    <link href="style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kvitto</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .receipt-container {
+      max-width: 700px;
+      margin: 3rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .receipt-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .receipt-header i {
+      font-size: 3rem;
+      color: #28a745;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-line {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      padding: 6px 0;
+    }
+
+    .receipt-footer {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .receipt-footer a {
+      text-decoration: none;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .receipt-footer a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 </head>
 <body>
-    <div class="slider">
-        <h1>COPIA</h1>
+
+  <div class="receipt-container">
+    <div class="receipt-header">
+      <i class="bi bi-check-circle-fill"></i>
+      <h2>Tack för din beställning!</h2>
+      <p>Ordernummer: <strong id="orderNumber"></strong></p>
+      <p>Datum: <span id="orderDate"></span></p>
     </div>
 
-    <div class="container">
-        <div class="receipt-container">
-            <div class="receipt-header">
-                <div class="checkmark">✓</div>
-                <h2>Tack för din beställning!</h2>
-                <p>Din order är mottagen och behandlas nu.</p>
-            </div>
-            
-            <div class="order-info">
-                <h3 class="section-title">Orderinformation</h3>
-                <p><strong>Ordernummer:</strong> <span class="order-number" id="orderId"></span></p>
-                <p><strong>Orderdatum:</strong> <span id="orderDate"></span></p>
-            </div>
-            
-            <div class="product-info">
-                <h3 class="section-title">Produktinformation</h3>
-                <div id="productInfo"></div>
-            </div>
-            
-            <div class="customer-info">
-                <h3 class="section-title">Kundinformation</h3>
-                <p><strong>Namn:</strong> <span id="customerName"></span></p>
-                <p><strong>E-post:</strong> <span id="customerEmail"></span></p>
-                <p><strong>Telefon:</strong> <span id="customerPhone"></span></p>
-            </div>
-            
-            <div class="delivery-info">
-                <h3 class="section-title">Leveransinformation</h3>
-                <p id="deliveryAddress"></p>
-            </div>
-            
-            <div class="text-center mt-4 no-print">
-                <button onclick="window.print()" class="btn btn-outline-primary btn-print">
-                    Skriv ut kvitto
-                </button>
-                <a href="index.html" class="btn btn-primary">
-                    Tillbaka till startsidan
-                </a>
-            </div>
-        </div>
-    </div>
+    <h4>Produkter:</h4>
+    <div id="productList" class="mb-3"></div>
 
-    <script src="kvittojs.js"></script>
+    <h5>Totalt att betala: <span id="orderTotal"></span> kr</h5>
+
+    <h4 class="mt-4">Dina uppgifter:</h4>
+    <p><strong>Namn:</strong> <span id="customerName"></span></p>
+    <p><strong>E-post:</strong> <span id="customerEmail"></span></p>
+    <p><strong>Telefon:</strong> <span id="customerPhone"></span></p>
+    <p><strong>Adress:</strong> <span id="customerAddress"></span></p>
+
+    <div class="receipt-footer">
+      <a href="index.html">Tillbaka till startsidan</a>
+    </div>
+  </div>
+
+  <script src="kvittojs.js"></script>
 </body>
 </html>

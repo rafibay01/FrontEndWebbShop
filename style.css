@@ -14140,3 +14140,49 @@ body {
           margin-bottom: 1rem;
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Lägg till en skugga för bättre kontrast */
         }
+
+        
+      
+
+        #cartButton {
+          border: none;
+          background: transparent;
+        }
+        
+        .cart-badge {
+          font-size: 0.75rem;
+          padding: 3px 6px;
+        }
+
+        .cart-panel {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 350px;
+          height: 100vh;
+          background-color: #fff;
+          box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          z-index: 1000;
+          transition: right 0.3s ease-in-out;
+          overflow-y: auto;
+        }
+        
+        .cart-panel.active {
+          right: 0;
+        }
+        
+        .cart-header {
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 10px;
+        }
+        
+        .cart-row {
+          border-bottom: 1px solid #eee;
+          padding: 8px 0;
+        }
+
+        
+        
+        
+    
